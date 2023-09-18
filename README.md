@@ -1,1 +1,1 @@
-# The project is about writing queries on food ordering data of a person using SQL functions
+# The project is about writing queries on food ordering data of a family using SQL functions

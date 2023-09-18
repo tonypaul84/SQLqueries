@@ -1,0 +1,68 @@
+
+
+1) Distinct Food Items Ordered
+
+SELECT count (distinct restaurant_name)
+FROM `thermal-circle-393611.Orders.orders` 
+
+
+
+2) Group vegetarian and meat items together
+
+SELECT id, order_id, name,
+case 
+when is_veg=1 then 'vegetarian'
+when is_veg=0 then 'non vegetarian'
+else 'nothing'
+end as foodtype
+FROM `thermal-circle-393611.items.items` 
+
+
+
+3) Count the number of unique orders
+
+SELECT name, 
+count(name), 
+FROM `thermal-circle-393611.items.items` 
+group by name;
+
+
+4) Show items containing chicken in their name 
+
+SELECT *
+FROM `thermal-circle-393611.items.items`
+where name like '%Chicken%'
+
+
+
+5)Find item names with Paratha
+
+SELECT *
+FROM `thermal-circle-393611.items.items`
+where name like '%Paratha%'
+
+
+
+6)Orders during rainy times
+
+SELECT *
+FROM `thermal-circle-393611.Orders.orders`
+where rain_mode>0
+
+
+
+7) Unique restaurant names
+
+SELECT 
+distinct restaurant_name
+FROM `thermal-circle-393611.Orders.orders` 
+
+
+
+8)Restaurant with most orders
+
+SELECT 
+restaurant_name, order_total
+FROM `thermal-circle-393611.Orders.orders` 
+where order_total>500
+order by (order_total)
